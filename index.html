@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-  <meta name="theme-color" content="#1e3a8a">
+  <meta name="theme-color" content="#0c4a6e">
   <title>Memorial de Contamana</title>
   
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Memorial de Contamana - Honrando el Legado">
-  <meta property="og:description" content="Recordar los momentos vividos y asumir el desafío de fe para nuestra iglesia en Contamana.">
+  <meta property="og:title" content="Memorial de Contamana - Fe, Memoria y Desafío">
+  <meta property="og:description" content="Recordando las maravillas de Dios y asumiendo el llamado de servir en Contamana.">
   <meta property="og:image" content="foto1.jpg">
 
   <link rel="icon" href="data:,">
@@ -17,81 +17,129 @@
     html{font-size:16px;-webkit-text-size-adjust:100%}
     body{
       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      background:#f0f9ff;color:#334155;
+      background:#082f49;color:#1e293b;
       min-height:100vh;
       overflow-x:hidden;-webkit-font-smoothing:antialiased;
       display:flex;justify-content:center;
     }
     
     .app-container {
-      width:100%;max-width:480px;background:#ffffff;
-      min-height:100vh;box-shadow:0 4px 25px rgba(0,0,0,0.08);
+      width:100%;max-width:480px;background:#f8fafc;
+      min-height:100vh;box-shadow:0 10px 35px rgba(0,0,0,0.3);
       position:relative;
     }
 
+    /* Cabecera viva inspirada en el Ucayali y atardecer de Contamana */
     .header{
       position:relative;text-align:center;
-      padding:3rem 1.5rem 2.5rem;
-      background:linear-gradient(175deg,#93c5fd 0%,#bfdbfe 50%,#e0f2fe 100%);
-      overflow:hidden;
+      padding:3.2rem 1.5rem 2.8rem;
+      background:linear-gradient(135deg, #0c4a6e 0%, #0284c7 50%, #059669 100%);
+      color:white;overflow:hidden;
     }
     .header::after{
       content:"";position:absolute;bottom:-2px;left:0;right:0;height:40px;
-      background:#ffffff;clip-path:ellipse(55% 100% at 50% 100%);
+      background:#f8fafc;clip-path:ellipse(55% 100% at 50% 100%);
     }
-    .header .icon{font-size:2.8rem;margin-bottom:.6rem;display:block;animation:float 3s ease-in-out infinite}
-    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-    .header h1{font-size:1.85rem;font-weight:800;letter-spacing:.5px;line-height:1.2;color:#1e3a8a;text-shadow:0 2px 12px rgba(30,58,138,.15)}
-    .header p{margin-top:.65rem;font-size:.95rem;color:#1d4ed8;line-height:1.45;font-style:italic;font-weight:600}
+    .header .icon{font-size:3rem;margin-bottom:.5rem;display:block;animation:float 3.5s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+    .header h1{
+      font-size:1.95rem;font-weight:900;letter-spacing:.5px;line-height:1.2;
+      color:#ffffff;text-shadow:0 2px 10px rgba(0,0,0,.3);
+    }
+    .header p{margin-top:.6rem;font-size:.95rem;color:#bae6fd;line-height:1.4;font-style:italic;font-weight:600}
     
+    /* Tarjetas de contenido */
     .challenge{
-      margin:1.2rem 1.15rem;padding:1.5rem 1.3rem;
-      background:#f8fafc;
-      border-radius:16px;border:1px solid #cbd5e1;
-      box-shadow:0 6px 20px rgba(0,0,0,.03);position:relative;overflow:hidden;
+      margin:1.3rem 1.15rem;padding:1.5rem 1.3rem;
+      background:#ffffff;
+      border-radius:18px;border:1px solid #e2e8f0;
+      box-shadow:0 8px 24px rgba(2,132,199,0.06);position:relative;overflow:hidden;
     }
     .challenge.gold{
-      border-color:#fde047;background:#fffbeb;
+      border: 1.5px solid #f59e0b;background:#fffdfa;
     }
-    .challenge.gold::before{content:"✦";position:absolute;top:-10px;right:12px;font-size:4rem;color:rgba(253,224,71,.25)}
+    .challenge.gold::before{content:"✦";position:absolute;top:-10px;right:12px;font-size:4.5rem;color:rgba(245,158,11,.15)}
     
     .challenge .label{
-      display:inline-block;font-size:.65rem;font-weight:700;text-transform:uppercase;
-      letter-spacing:2px;color:#b45309;background:#fef3c7;
-      padding:.3rem .7rem;border-radius:20px;margin-bottom:.85rem;
+      display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;
+      letter-spacing:1.5px;color:#92400e;background:#fef3c7;
+      padding:.35rem .8rem;border-radius:20px;margin-bottom:.85rem;
     }
     .challenge .label-blue{
-      color:#1e3a8a;background:#dbeafe;
+      color:#0369a1;background:#e0f2fe;
     }
-    .challenge h2{font-size:1.15rem;font-weight:700;line-height:1.4;margin-bottom:.6rem;color:#0f172a}
+    .challenge h2{font-size:1.2rem;font-weight:800;line-height:1.3;margin-bottom:.6rem;color:#0f172a}
     .challenge p{font-size:.9rem;line-height:1.55;color:#475569}
-    .challenge .verse{
-      margin-top:1rem;padding-top:.85rem;border-top:1px solid #e2e8f0;
-      font-size:.82rem;color:#0284c7;font-style:italic;font-weight:600;
+
+    /* Caja del versículo dinámico diario */
+    .caja-versiculo-diario {
+      margin-top:1.2rem;padding:1rem;
+      background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      border-left:4px solid #0284c7;border-radius:8px;
+    }
+    .caja-versiculo-diario .texto-versiculo{
+      font-size:.88rem;color:#0369a1;font-style:italic;font-weight:600;line-height:1.45;
+    }
+    .caja-versiculo-diario .cita-versiculo{
+      font-size:.78rem;color:#0284c7;font-weight:800;margin-top:6px;text-align:right;display:block;
     }
 
-    /* Lista de desafíos */
-    .lista-desafios {
-      margin-top:10px;display:flex;flex-direction:column;gap:8px;
+    /* Sección de cómo servir */
+    .guia-servicio {
+      background:#f8fafc;border-radius:12px;padding:12px;margin:12px 0;border:1px dashed #cbd5e1;
     }
-    .item-desafio {
-      display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:#334155;line-height:1.4;
-    }
+    .guia-servicio h4 {font-size:0.85rem;color:#0f172a;margin-bottom:8px;}
+    .lista-alcances {list-style:none;display:flex;flex-direction:column;gap:6px;font-size:0.82rem;color:#334155;}
+    .lista-alcances li span {font-weight:bold;color:#0284c7;}
 
-    .audio-section{
-      margin:1.2rem 1.15rem;padding:1.4rem;background:#ffffff;
-      border-radius:16px;text-align:center;border:1px solid #86efac;
-      box-shadow:0 6px 20px rgba(0,0,0,.04);
+    /* Formulario de motivo de oración */
+    .caja-oracion {
+      margin-top:12px;display:flex;flex-direction:column;gap:8px;
     }
-    .audio-section h3{color:#065f46;margin-bottom:.4rem;font-size:1.1rem}
-    .audio-section p{font-size:.85rem;color:#64748b;margin-bottom:1rem}
+    .textarea-oracion {
+      width:100%;min-height:75px;padding:10px;border-radius:10px;
+      border:1.5px solid #cbd5e1;font-size:0.85rem;resize:none;font-family:inherit;
+    }
+    .textarea-oracion:focus {outline:none;border-color:#0284c7;}
+    
+    .btn-enviar-oracion {
+      background:linear-gradient(135deg, #2563eb, #1d4ed8);
+      color:white;border:none;border-radius:10px;padding:12px;
+      font-weight:bold;font-size:0.88rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;gap:6px;
+      box-shadow:0 4px 12px rgba(37,99,235,0.25);
+    }
+    .btn-enviar-oracion:active {transform:scale(0.98);}
+
+    /* Sección multimedia: Audios y Videos */
+    .multimedia-section{
+      margin:1.3rem 1.15rem;padding:1.4rem;background:#ffffff;
+      border-radius:18px;border:1px solid #a7f3d0;
+      box-shadow:0 8px 24px rgba(16,185,129,0.06);text-align:center;
+    }
+    .multimedia-section h3{color:#065f46;margin-bottom:.4rem;font-size:1.15rem;font-weight:800}
+    .multimedia-section p{font-size:.85rem;color:#64748b;margin-bottom:1rem}
     audio{width:100%;outline:none;border-radius:30px}
+
+    .botones-videos {
+      display:flex;gap:10px;margin-top:14px;
+    }
+    .btn-video-item {
+      flex:1;background:#ef4444;color:white;text-decoration:none;
+      padding:10px;border-radius:10px;font-size:0.78rem;font-weight:bold;
+      display:flex;align-items:center;justify-content:center;gap:6px;
+    }
+    .btn-audio-item {
+      flex:1;background:#0d9488;color:white;text-decoration:none;
+      padding:10px;border-radius:10px;font-size:0.78rem;font-weight:bold;
+      display:flex;align-items:center;justify-content:center;gap:6px;
+    }
 
     /* Carrusel */
     .carousel-section{padding:1rem 0 1rem}
     .carousel-section .section-title{
-      text-align:center;font-size:.72rem;text-transform:uppercase;
-      letter-spacing:2.5px;color:#64748b;margin-bottom:1rem;font-weight:700;
+      text-align:center;font-size:.75rem;text-transform:uppercase;
+      letter-spacing:2.5px;color:#0369a1;margin-bottom:1rem;font-weight:800;
     }
     .carousel{position:relative;width:100%;overflow:hidden;touch-action:pan-y}
     .carousel-track{display:flex;transition:transform .4s cubic-bezier(.25,.8,.25,1);will-change:transform}
@@ -100,109 +148,99 @@
     
     .slide-caption{
       position:absolute;bottom:0;left:0;right:0;padding:.8rem 1rem;
-      background:linear-gradient(transparent,rgba(0,0,0,.75));
-      font-size:1rem;color:#ffffff;font-weight:600;text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+      background:linear-gradient(transparent,rgba(0,0,0,.8));
+      font-size:1rem;color:#ffffff;font-weight:700;text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
     }
     .carousel-dots{display:flex;justify-content:center;gap:8px;margin-top:.9rem}
     .carousel-dots .dot{
       width:8px;height:8px;border-radius:50%;background:#cbd5e1;
       border:none;padding:0;cursor:pointer;transition:all .3s;
     }
-    .carousel-dots .dot.active{background:#3b82f6;transform:scale(1.3)}
+    .carousel-dots .dot.active{background:#0284c7;transform:scale(1.35)}
     .carousel-arrow{
       position:absolute;top:50%;transform:translateY(-50%);
-      width:36px;height:36px;border-radius:50%;border:none;
-      background:rgba(255,255,255,.85);color:#1e3a8a;font-size:1.2rem;
+      width:38px;height:38px;border-radius:50%;border:none;
+      background:rgba(255,255,255,.9);color:#0c4a6e;font-size:1.2rem;
       cursor:pointer;z-index:2;display:flex;align-items:center;
-      justify-content:center;backdrop-filter:blur(4px);
-      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+      justify-content:center;box-shadow: 0 4px 12px rgba(0,0,0,0.25);
     }
     .carousel-arrow.prev{left:10px}
     .carousel-arrow.next{right:10px}
 
-    /* Botón Google Fotos */
     .btn-fotos-google {
       display:block;width:fit-content;margin:12px auto 0 auto;
-      background:#ffffff;color:#1e3a8a;border:1.5px solid #1e3a8a;
-      border-radius:20px;padding:8px 18px;font-size:0.8rem;
+      background:#ffffff;color:#0284c7;border:1.8px solid #0284c7;
+      border-radius:20px;padding:9px 20px;font-size:0.82rem;
       font-weight:bold;text-decoration:none;
     }
 
-    /* Botón de Compromiso */
-    .btn-compromiso {
-      display:flex;align-items:center;justify-content:center;gap:8px;
-      background:#2563eb;color:white;padding:12px 18px;
-      border-radius:12px;text-decoration:none;font-weight:bold;font-size:0.88rem;
-      margin-top:14px;box-shadow:0 4px 12px rgba(37,99,235,0.25);
-    }
-    .btn-compromiso:active{transform:scale(0.98)}
-
+    /* WhatsApp final */
     .cta-area{padding:1.5rem 1.15rem 2.5rem;text-align:center}
     .btn-whatsapp{
-      display:inline-flex;align-items:center;justify-content:center;gap:.55rem;
-      padding:.95rem 1.8rem;font-size:1rem;font-weight:700;color:#fff;
+      display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+      padding:1rem 1.8rem;font-size:1rem;font-weight:800;color:#fff;
       background:#25d366;border:none;border-radius:50px;cursor:pointer;
-      box-shadow:0 6px 20px rgba(37,211,102,.35);text-decoration:none;
-      width:100%;max-width:320px;
+      box-shadow:0 8px 24px rgba(37,211,102,.38);text-decoration:none;
+      width:100%;max-width:330px;
     }
     .btn-whatsapp:active{transform:scale(.96)}
     .btn-whatsapp svg{width:22px;height:22px;fill:#fff}
-    .cta-sub{margin-top:.7rem;font-size:.75rem;color:#94a3b8}
-    .footer{text-align:center;padding:1rem;font-size:.7rem;color:#94a3b8;border-top:1px solid #f1f5f9}
+    .cta-sub{margin-top:.7rem;font-size:.78rem;color:#64748b}
+    .footer{text-align:center;padding:1.2rem;font-size:.72rem;color:#64748b;border-top:1px solid #e2e8f0}
   </style>
 </head>
 <body>
 
   <div class="app-container">
 
-    <!-- CABECERA -->
+    <!-- CABECERA ATRACTIVA -->
     <header class="header">
       <span class="icon">🕊️</span>
       <h1>Memorial de Contamana</h1>
       <p>«Recordar los momentos vividos es revivir la bendición.»</p>
     </header>
 
-    <!-- MEMORIAL / GRATITUD -->
+    <!-- TESTIMONIO HISTÓRICO -->
     <section class="challenge gold">
       <span class="label">✨ En memoria y gratitud</span>
-      <h2>Un testimonio que perdura</h2>
+      <h2>Un testimonio que perdura en Contamana</h2>
       <p>
-        Este espacio honra los pasos de fe dados en el Señor Jesús en Contamana: las oraciones derramadas, el esfuerzo de los que nos precedieron y las vidas transformadas por el Evangelio. Cada recuerdo es un altar de victoria en nuestro corazón.
+        Este espacio honra los pasos de fe dados en el Señor Jesús en nuestra hermosa tierra: oraciones en las riberas del Ucayali, el testimonio de siervos que nos precedieron y vidas restauradas.
       </p>
-      <div class="verse">
+      <div style="margin-top:10px;font-size:0.82rem;color:#b45309;font-weight:bold;">
         «Hasta aquí nos ayudó Jehová.» (1 Samuel 7:12)
       </div>
     </section>
 
-    <!-- CARRUSEL DE FOTOS -->
+    <!-- CARRUSEL DE RECUERDOS -->
     <section class="carousel-section">
-      <div class="section-title">Momentos inolvidables</div>
+      <div class="section-title">Momentos Inolvidables</div>
       <div class="carousel" id="carousel">
         <div class="carousel-track" id="track">
           
           <div class="carousel-slide">
             <img src="foto1.jpg" alt="Recuerdo 1">
-            <div class="slide-caption">Un día especial</div>
+            <div class="slide-caption">Un día especial en la iglesia</div>
           </div>
           
           <div class="carousel-slide">
             <img src="foto2.jpg" alt="Recuerdo 2">
-            <div class="slide-caption">Compartiendo juntos</div>
+            <div class="slide-caption">Compartiendo en comunión</div>
           </div>
           
           <div class="carousel-slide">
             <img src="foto3.jpg" alt="Recuerdo 3">
-            <div class="slide-caption">Momentos en la iglesia</div>
+            <div class="slide-caption">Tiempos de búsqueda y oración</div>
           </div>
 
           <div class="carousel-slide">
             <img src="foto4.jpg" alt="Recuerdo 4">
-            <div class="slide-caption">Un día lleno de alegría</div>
+            <div class="slide-caption">Un día lleno de gozo</div>
           </div>
           
           <div class="carousel-slide">
             <img src="foto5.jpg" alt="Recuerdo 5">
-            <div class="slide-caption">Compartiendo tiempos de bendición</div>
+            <div class="slide-caption">Caminando juntos en la fe</div>
           </div>
           
         </div>
@@ -211,70 +249,90 @@
       </div>
       <div class="carousel-dots" id="dots"></div>
 
-      <!-- Enlace para ver álbum completo en Google Fotos -->
-      <a href="https://photos.app.goo.gl/https://photos.app.goo.gl/Cah43qhTTaw4qDyB6" target="_blank" class="btn-fotos-google">
-        📸 Ver galería histórica completa
+      <!-- Enlace seguro para Google Fotos (sin enlaces dinámicos rotos) -->
+      <a href="https://photos.google.com" target="_blank" id="link-fotos" class="btn-fotos-google">
+        📸 Ver álbum histórico completo de fotos
       </a>
     </section>
 
-    <!-- SECCIÓN DE AUDIO DE ENSEÑANZA -->
-    <div class="audio-section">
-      <h3>🎧 Enseñanza y Reflexión</h3>
-      <p>Escucha esta palabra para fortalecer tu espíritu:</p>
+    <!-- ENSEÑANZA: AUDIOS Y VIDEOS -->
+    <div class="multimedia-section">
+      <h3>🎧 Enseñanzas y Predicaciones</h3>
+      <p>Escucha y medita en la Palabra de Dios para hoy:</p>
+      
+      <!-- Audio principal en GitHub -->
       <audio controls preload="metadata">
         <source src="ensenanza.mp3" type="audio/mpeg">
         Tu navegador no soporta el reproductor.
       </audio>
+
+      <!-- Botones para ver videos y más audios -->
+      <div class="botones-videos">
+        <a href="https://www.youtube.com/results?search_query=predicaciones+cristianas" target="_blank" class="btn-video-item">
+          ▶ Ver Predicaciones en Video
+        </a>
+        <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" class="btn-audio-item">
+          🎙️ Pedir audios por WhatsApp
+        </a>
+      </div>
     </div>
 
-    <!-- EL NUEVO GRAN DESAFÍO ESPIRITUAL -->
+    <!-- EL DESAFÍO: CAJA DE ORACIÓN Y GUÍA DE SERVICIO -->
     <section class="challenge">
-      <span class="label label-blue">🔥 El Desafío de Hoy</span>
+      <span class="label label-blue">🔥 Desafío y Compromiso</span>
       <h2>¡Toma la antorcha en Contamana!</h2>
       <p>
-        El memorial no termina en el pasado; nos desafía hoy a los que seguimos en pie en esta bendita tierra de Contamana:
+        El memorial nos llama a la acción a los creyentes de hoy. Aquí tienes alcances bíblicos de cómo puedes servir a Dios en la congregación:
       </p>
 
-      <div class="lista-desafios">
-        <div class="item-desafio">
-          <span>📍</span>
-          <span><strong>Orar sin cesar:</strong> Por cada familia, barrio y comunidad a orillas de nuestros ríos.</span>
-        </div>
-        <div class="item-desafio">
-          <span>📖</span>
-          <span><strong>Sembrar la verdad:</strong> Discipular a los niños y jóvenes para que la fe nunca se apague.</span>
-        </div>
-        <div class="item-desafio">
-          <span>🤝</span>
-          <span><strong>Servir con amor:</strong> Ser manos abiertas para los que necesitan consuelo y salvación.</span>
-        </div>
+      <!-- Guía de cómo servir a Dios -->
+      <div class="guia-servicio">
+        <h4>🌱 ¿Cómo puedes servir al Señor hoy?</h4>
+        <ul class="lista-alcances">
+          <li><span>1. Guerrero de Oración:</span> Interceder por los enfermos, familias y las orillas del río.</li>
+          <li><span>2. Sembrador de la Palabra:</span> Compartir el evangelio con vecinos, amigos y caseríos.</li>
+          <li><span>3. Amigo de los Niños:</span> Apoyar en la enseñanza y discipulado de la niñez y juventud.</li>
+          <li><span>4. Manos Solidarias:</span> Visitar hogares y brindar consuelo práctico a los necesitados.</li>
+        </ul>
       </div>
 
-      <div class="verse">
-        «Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes.» (Josué 1:9)
+      <!-- VERSÍCULO QUE CAMBIA SOLO CADA DÍA -->
+      <div class="caja-versiculo-diario">
+        <div class="texto-versiculo" id="versiculo-texto">
+          Cargando palabra de hoy...
+        </div>
+        <span class="cita-versiculo" id="versiculo-cita"></span>
       </div>
 
-      <!-- Botón de Compromiso Personal -->
-      <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2 target="_blank" class="btn-compromiso">
-        ✋ Yo me comprometo a orar y servir en Contamana
-      </a>
+      <!-- Caja para intercambiar motivos de oración -->
+      <div class="caja-oracion">
+        <label for="texto-peticion" style="font-size:0.82rem;font-weight:bold;color:#0f172a;">
+          ✍️ Escribe tu motivo de oración o compromiso de servicio:
+        </label>
+        <textarea id="texto-peticion" class="textarea-oracion" placeholder="Ejemplo: 'Hermano/Pastor, deseo comprometerme a orar y apoyar en el ministerio de...'"></textarea>
+        
+        <button class="btn-enviar-oracion" onclick="enviarOracionWhatsApp()">
+          📲 Compartir mi motivo en WhatsApp
+        </button>
+      </div>
+
     </section>
 
-    <!-- BOTÓN DE RETORNO A WHATSAPP -->
+    <!-- RETORNO A WHATSAPP GENERAL -->
     <div class="cta-area">
-      <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2 target="_blank" class="btn-whatsapp">
+      <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" class="btn-whatsapp">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.855L.058 23.487a.5.5 0 00.611.611l5.632-1.462A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.94 0-3.79-.562-5.373-1.572l-.386-.23-3.342.868.884-3.26-.253-.4A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
         Volver al grupo de WhatsApp
       </a>
-      <p class="cta-sub">Toca para compartir tus oraciones con los hermanos</p>
+      <p class="cta-sub">Toca para regresar a la comunidad</p>
     </div>
 
     <footer class="footer">Memorial de Contamana © 2026</footer>
 
   </div>
 
-  <!-- SCRIPT COMPLETO CON CONTROL TÁCTIL Y AUTO-CARRUSEL -->
   <script>
+    // 1. Carrusel táctil con rotación automática
     (function(){
       const track = document.getElementById('track');
       const slides = track.children;
@@ -283,17 +341,12 @@
       let current = 0;
       let startX = 0;
       let isDragging = false;
-      let autoPlayTimer;
+      let timer;
 
-      // Crear puntos indicadores
       for(let i=0; i<total; i++){
         const d = document.createElement('button');
         d.className = 'dot' + (i === 0 ? ' active' : '');
-        d.setAttribute('aria-label', 'Slide ' + (i + 1));
-        d.addEventListener('click', () => {
-          goTo(i);
-          reiniciarAutoPlay();
-        });
+        d.addEventListener('click', () => { goTo(i); resetTimer(); });
         dotsBox.appendChild(d);
       }
 
@@ -307,51 +360,82 @@
         dots.forEach((d, j) => d.classList.toggle('active', j === current));
       }
 
-      document.getElementById('prevBtn').addEventListener('click', () => {
-        goTo(current - 1);
-        reiniciarAutoPlay();
-      });
+      document.getElementById('prevBtn').addEventListener('click', () => { goTo(current - 1); resetTimer(); });
+      document.getElementById('nextBtn').addEventListener('click', () => { goTo(current + 1); resetTimer(); });
 
-      document.getElementById('nextBtn').addEventListener('click', () => {
-        goTo(current + 1);
-        reiniciarAutoPlay();
-      });
-
-      // Control táctil para celulares (Deslizar con el dedo)
-      track.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-        isDragging = true;
-      }, {passive: true});
-
+      track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; isDragging = true; }, {passive:true});
       track.addEventListener('touchend', e => {
-        if (!isDragging) return;
-        const endX = e.changedTouches[0].clientX;
-        const diffX = startX - endX;
-
-        if (diffX > 45) {
-          goTo(current + 1); // Deslizó a la izquierda
-          reiniciarAutoPlay();
-        } else if (diffX < -45) {
-          goTo(current - 1); // Deslizó a la derecha
-          reiniciarAutoPlay();
-        }
+        if(!isDragging) return;
+        const diffX = startX - e.changedTouches[0].clientX;
+        if(diffX > 45) { goTo(current + 1); resetTimer(); }
+        else if(diffX < -45) { goTo(current - 1); resetTimer(); }
         isDragging = false;
-      }, {passive: true});
+      }, {passive:true});
 
-      // Avance automático cada 4.5 segundos
-      function iniciarAutoPlay() {
-        autoPlayTimer = setInterval(() => {
-          goTo(current + 1);
-        }, 4500);
-      }
-
-      function reiniciarAutoPlay() {
-        clearInterval(autoPlayTimer);
-        iniciarAutoPlay();
-      }
-
-      iniciarAutoPlay();
+      function startTimer(){ timer = setInterval(() => goTo(current + 1), 4500); }
+      function resetTimer(){ clearInterval(timer); startTimer(); }
+      startTimer();
     })();
+
+    // 2. Sistema de Versículo Diario Automático (31 días del mes)
+    (function(){
+      const versiculosMes = [
+        { v: "«Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo dondequiera que vayas.»", c: "Josué 1:9" },
+        { v: "«Hasta aquí nos ayudó Jehová.»", c: "1 Samuel 7:12" },
+        { v: "«Todo lo puedo en Cristo que me fortalece.»", c: "Filipenses 4:13" },
+        { v: "«Jehová es mi luz y mi salvación; ¿de quién temeré?»", c: "Salmos 27:1" },
+        { v: "«Y todo lo que hagáis, hacedlo de corazón, como para el Señor y no para los hombres.»", c: "Colosenses 3:23" },
+        { v: "«Clama a mí, y yo te responderé, y te enseñaré cosas grandes y ocultas que tú no conoces.»", c: "Jeremías 33:3" },
+        { v: "«El Señor peleará por vosotros, y vosotros estaréis tranquilos.»", c: "Éxodo 14:14" },
+        { v: "«Porque donde están dos o tres congregados en mi nombre, allí estoy yo en medio de ellos.»", c: "Mateo 18:20" },
+        { v: "«Fiel es el que os llama, el cual también lo hará.»", c: "1 Tesalonicenses 5:24" },
+        { v: "«La paz os dejo, mi paz os doy; yo no os la doy como el mundo la da.»", c: "Juan 14:27" },
+        { v: "«Pero los que esperan a Jehová tendrán nuevas fuerzas; levantarán alas como las águilas.»", c: "Isaías 40:31" },
+        { v: "«Yo y mi casa serviremos a Jehová.»", c: "Josué 24:15" },
+        { v: "«Instruye al niño en su camino, y aun cuando fuere viejo no se apartará de él.»", c: "Proverbios 22:6" },
+        { v: "«Por nada estéis afanosos, sino sean conocidas vuestras peticiones delante de Dios en toda oración.»", c: "Filipenses 4:6" },
+        { v: "«Lámpara es a mis pies tu palabra, y lumbrera a mi camino.»", c: "Salmos 119:105" },
+        { v: "«El corazón alegre constituye buen remedio; mas el espíritu triste seca los huesos.»", c: "Proverbios 17:22" },
+        { v: "«Bienaventurados los que tienen hambre y sed de justicia, porque ellos serán saciados.»", c: "Mateo 5:6" },
+        { v: "«Pedid, y se os dará; buscad, y hallaréis; llamad, y se os abrirá.»", c: "Mateo 7:7" },
+        { v: "«Si Dios es por nosotros, ¿quién contra nosotros?»", c: "Romanos 8:31" },
+        { v: "«El Señor es mi pastor; nada me faltará.»", c: "Salmos 23:1" },
+        { v: "«En el mundo tendréis aflicción; pero confiad, yo he vencido al mundo.»", c: "Juan 16:33" },
+        { v: "«He aquí, yo estoy a la puerta y llamo; si alguno oye mi voz y abre la puerta, entraré a él.»", c: "Apocalipsis 3:20" },
+        { v: "«Echando toda vuestra ansiedad sobre él, porque él tiene cuidado de vosotros.»", c: "1 Pedro 5:7" },
+        { v: "«Torre fuerte es el nombre de Jehová; a él correrá el justo, y será levantado.»", c: "Proverbios 18:10" },
+        { v: "«Dad gracias en todo, porque esta es la voluntad de Dios para con vosotros en Cristo Jesús.»", c: "1 Tesalonicenses 5:18" },
+        { v: "«De modo que si alguno está en Cristo, nueva criatura es; las cosas viejas pasaron.»", c: "2 Corintios 5:17" },
+        { v: "«Grande es su fidelidad; nuevas son cada mañana sus misericordias.»", c: "Lamentaciones 3:23" },
+        { v: "«El amor nunca deja de ser.»", c: "1 Corintios 13:8" },
+        { v: "«He aquí que yo soy Jehová, Dios de toda carne; ¿habrá algo que sea difícil para mí?»", c: "Jeremías 32:27" },
+        { v: "«Mas el fruto del Espíritu es amor, gozo, paz, paciencia, benignidad, bondad, fe.»", c: "Gálatas 5:22" },
+        { v: "«Ciertamente el bien y la misericordia me seguirán todos los días de mi vida.»", c: "Salmos 23:6" }
+      ];
+
+      // Selecciona el versículo exacto según el día del mes (1 al 31)
+      const diaHoy = new Date().getDate() - 1;
+      const versiculo = versiculosMes[diaHoy % versiculosMes.length];
+
+      document.getElementById('versiculo-texto').innerText = versiculo.v;
+      document.getElementById('versiculo-cita').innerText = versiculo.c;
+    })();
+
+    // 3. Envío del motivo de oración o compromiso a WhatsApp
+    function enviarOracionWhatsApp() {
+      const texto = document.getElementById('texto-peticion').value.trim();
+      if (!texto) {
+        alert("Por favor escribe tu motivo de oración o compromiso antes de enviar.");
+        return;
+      }
+      
+      const mensaje = encodeURIComponent("🕊️ *Memorial de Contamana - Motivo de Oración / Compromiso:* \n\n" + texto);
+      
+      // Puedes cambiar este número por el del pastor o líder encargado:
+      const enlace = "https://wa.me/51999999999?text=" + mensaje;
+      
+      window.open(enlace, '_blank');
+    }
   </script>
 
 </body>
