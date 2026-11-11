@@ -29,7 +29,7 @@
       position:relative;
     }
 
-    /* Cabecera viva inspirada en el Ucayali y atardecer de Contamana */
+    /* Cabecera Viva */
     .header{
       position:relative;text-align:center;
       padding:3.2rem 1.5rem 2.8rem;
@@ -48,7 +48,7 @@
     }
     .header p{margin-top:.6rem;font-size:.95rem;color:#bae6fd;line-height:1.4;font-style:italic;font-weight:600}
     
-    /* Tarjetas de contenido */
+    /* Secciones */
     .challenge{
       margin:1.3rem 1.15rem;padding:1.5rem 1.3rem;
       background:#ffffff;
@@ -71,7 +71,7 @@
     .challenge h2{font-size:1.2rem;font-weight:800;line-height:1.3;margin-bottom:.6rem;color:#0f172a}
     .challenge p{font-size:.9rem;line-height:1.55;color:#475569}
 
-    /* Caja del versículo dinámico diario */
+    /* Versículo Diario */
     .caja-versiculo-diario {
       margin-top:1.2rem;padding:1rem;
       background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
@@ -84,7 +84,7 @@
       font-size:.78rem;color:#0284c7;font-weight:800;margin-top:6px;text-align:right;display:block;
     }
 
-    /* Sección de cómo servir */
+    /* Guía de Servicio */
     .guia-servicio {
       background:#f8fafc;border-radius:12px;padding:12px;margin:12px 0;border:1px dashed #cbd5e1;
     }
@@ -92,26 +92,38 @@
     .lista-alcances {list-style:none;display:flex;flex-direction:column;gap:6px;font-size:0.82rem;color:#334155;}
     .lista-alcances li span {font-weight:bold;color:#0284c7;}
 
-    /* Formulario de motivo de oración */
-    .caja-oracion {
-      margin-top:12px;display:flex;flex-direction:column;gap:8px;
+    /* Botón y Caja Desplegable de Oración */
+    .btn-toggle-oracion {
+      width:100%;background:linear-gradient(135deg, #0284c7, #1d4ed8);
+      color:white;border:none;border-radius:12px;padding:13px;
+      font-weight:800;font-size:0.92rem;cursor:pointer;
+      display:flex;align-items:center;justify-content:center;gap:8px;
+      box-shadow:0 4px 14px rgba(2,132,199,0.25);margin-top:14px;
+      transition:transform 0.1s ease;
     }
+    .btn-toggle-oracion:active {transform:scale(0.98);}
+
+    .caja-oracion-desplegable {
+      display:none; /* Oculta por defecto */
+      margin-top:12px;padding:14px;background:#f0f9ff;
+      border:1.5px solid #bae6fd;border-radius:12px;
+      animation:fadeIn 0.25s ease-in-out;
+    }
+
     .textarea-oracion {
-      width:100%;min-height:75px;padding:10px;border-radius:10px;
+      width:100%;min-height:85px;padding:10px;border-radius:10px;
       border:1.5px solid #cbd5e1;font-size:0.85rem;resize:none;font-family:inherit;
+      margin:8px 0;
     }
     .textarea-oracion:focus {outline:none;border-color:#0284c7;}
     
     .btn-enviar-oracion {
-      background:linear-gradient(135deg, #2563eb, #1d4ed8);
-      color:white;border:none;border-radius:10px;padding:12px;
-      font-weight:bold;font-size:0.88rem;cursor:pointer;
+      background:#2563eb;color:white;border:none;border-radius:10px;padding:11px;
+      font-weight:bold;font-size:0.85rem;cursor:pointer;width:100%;
       display:flex;align-items:center;justify-content:center;gap:6px;
-      box-shadow:0 4px 12px rgba(37,99,235,0.25);
     }
-    .btn-enviar-oracion:active {transform:scale(0.98);}
 
-    /* Sección multimedia: Audios y Videos */
+    /* Multimedia: Predicaciones y Audios */
     .multimedia-section{
       margin:1.3rem 1.15rem;padding:1.4rem;background:#ffffff;
       border-radius:18px;border:1px solid #a7f3d0;
@@ -119,20 +131,36 @@
     }
     .multimedia-section h3{color:#065f46;margin-bottom:.4rem;font-size:1.15rem;font-weight:800}
     .multimedia-section p{font-size:.85rem;color:#64748b;margin-bottom:1rem}
-    audio{width:100%;outline:none;border-radius:30px}
 
     .botones-videos {
-      display:flex;gap:10px;margin-top:14px;
+      display:flex;gap:10px;
     }
     .btn-video-item {
       flex:1;background:#ef4444;color:white;text-decoration:none;
-      padding:10px;border-radius:10px;font-size:0.78rem;font-weight:bold;
+      padding:11px 8px;border-radius:10px;font-size:0.8rem;font-weight:bold;
       display:flex;align-items:center;justify-content:center;gap:6px;
     }
-    .btn-audio-item {
-      flex:1;background:#0d9488;color:white;text-decoration:none;
-      padding:10px;border-radius:10px;font-size:0.78rem;font-weight:bold;
-      display:flex;align-items:center;justify-content:center;gap:6px;
+    .btn-audio-toggle {
+      flex:1;background:#0d9488;color:white;border:none;
+      padding:11px 8px;border-radius:10px;font-size:0.8rem;font-weight:bold;
+      display:flex;align-items:center;justify-content:center;gap:6px;cursor:pointer;
+    }
+
+    /* Caja interna desplegable para audios completos */
+    .caja-audios-interna {
+      display:none; /* Oculta por defecto */
+      margin-top:12px;padding:12px;background:#f0fdf4;
+      border:1.5px solid #bbf7d0;border-radius:12px;
+      text-align:left;animation:fadeIn 0.25s ease-in-out;
+    }
+    .caja-audios-interna h4 {
+      font-size:0.82rem;color:#065f46;margin-bottom:8px;text-align:center;
+    }
+    .item-audio-completo {
+      display:flex;align-items:center;justify-content:space-between;
+      background:white;padding:10px 12px;border-radius:8px;
+      text-decoration:none;color:#1e293b;font-size:0.8rem;font-weight:bold;
+      margin-bottom:6px;border:1px solid #dcfce7;
     }
 
     /* Carrusel */
@@ -174,7 +202,7 @@
       font-weight:bold;text-decoration:none;
     }
 
-    /* WhatsApp final */
+    /* WhatsApp final único */
     .cta-area{padding:1.5rem 1.15rem 2.5rem;text-align:center}
     .btn-whatsapp{
       display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
@@ -187,13 +215,23 @@
     .btn-whatsapp svg{width:22px;height:22px;fill:#fff}
     .cta-sub{margin-top:.7rem;font-size:.78rem;color:#64748b}
     .footer{text-align:center;padding:1.2rem;font-size:.72rem;color:#64748b;border-top:1px solid #e2e8f0}
+
+    @keyframes fadeIn {
+      from { opacity:0; transform:translateY(-6px); }
+      to { opacity:1; transform:translateY(0); }
+    }
   </style>
 </head>
 <body>
 
   <div class="app-container">
 
-    <!-- CABECERA ATRACTIVA -->
+    <!-- AUDIO DE GITHUB: TOTALMENTE OCULTO DE LA VISTA -->
+    <audio id="audio-fondo" loop preload="auto">
+      <source src="ensenanza.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- CABECERA -->
     <header class="header">
       <span class="icon">🕊️</span>
       <h1>Memorial de Contamana</h1>
@@ -212,7 +250,7 @@
       </div>
     </section>
 
-    <!-- CARRUSEL DE RECUERDOS -->
+    <!-- CARRUSEL DE FOTOS -->
     <section class="carousel-section">
       <div class="section-title">Momentos Inolvidables</div>
       <div class="carousel" id="carousel">
@@ -225,7 +263,7 @@
           
           <div class="carousel-slide">
             <img src="foto2.jpg" alt="Recuerdo 2">
-            <div class="slide-caption">Los niños en el inicio de la iglesia </div>
+            <div class="slide-caption">Los niños, desde el inicio</div>
           </div>
           
           <div class="carousel-slide">
@@ -249,54 +287,75 @@
       </div>
       <div class="carousel-dots" id="dots"></div>
 
-      <!-- Enlace seguro para Google Fotos (sin enlaces dinámicos rotos) -->
+      <!-- Enlace directo al álbum de Google Fotos -->
       <a href="https://photos.app.goo.gl/Cah43qhTTaw4qDyB6" target="_blank" id="link-fotos" class="btn-fotos-google">
-        📸 Ver álbum histórico completo de fotos
+        📸 Ver galería histórica completa de fotos
       </a>
     </section>
 
-    <!-- ENSEÑANZA: AUDIOS Y VIDEOS -->
+    <!-- SECCIÓN MULTIMEDIA (VIDEOS + CAJA DE AUDIOS INTERNOS) -->
     <div class="multimedia-section">
-      <h3>🎧 Enseñanzas y Predicaciones</h3>
-      <p>Escucha y medita en la Palabra de Dios para hoy:</p>
+      <h3>🎧 Enseñanzas y Mensajes</h3>
+      <p>Palabra de Dios y edificación para tu vida:</p>
       
-      <!-- Audio principal en GitHub -->
-      <audio controls preload="metadata">
-        <source src="ensenanza.mp3" type="audio/mpeg">
-        Tu navegador no soporta el reproductor.
-      </audio>
-
-      <!-- Botones para ver videos y más audios -->
       <div class="botones-videos">
-        <a href="https://www.youtube.com/results?search_query=predicaciones+cristianas" target="_blank" class="btn-video-item">
-          ▶ Ver Predicaciones en Video
+        <!-- Botón YouTube: apaga el audio de fondo y abre videos -->
+        <a href="https://www.youtube.com/results?search_query=predicaciones+cristianas" 
+           target="_blank" 
+           onclick="apagarAudioFondo()" 
+           class="btn-video-item">
+          ▶ Ver Prédicas en Video
         </a>
-        <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" class="btn-audio-item">
-          🎙️ Pedir audios por WhatsApp
+
+        <!-- Botón Desplegable: abre la caja interna de audios -->
+        <button class="btn-audio-toggle" onclick="toggleCajaAudios()">
+          🎙️ Audios Completos ▾
+        </button>
+      </div>
+
+      <!-- CAJA INTERNA DESPLEGABLE CON AUDIOS COMPLETOS -->
+      <div id="caja-audios" class="caja-audios-interna">
+        <h4>Selecciona qué deseas escuchar:</h4>
+        
+        <!-- Opción 1: Prédicas completas -->
+        <a href="https://open.spotify.com/search/predicas%20cristianas" 
+           target="_blank" 
+           onclick="apagarAudioFondo()" 
+           class="item-audio-completo">
+          <span>📖 Prédicas en Audio Completo</span>
+          <span>▶</span>
+        </a>
+
+        <!-- Opción 2: Alabanzas completas -->
+        <a href="https://open.spotify.com/search/alabanzas%20cristianas" 
+           target="_blank" 
+           onclick="apagarAudioFondo()" 
+           class="item-audio-completo">
+          <span>🎶 Alabanzas en Audio Completo</span>
+          <span>▶</span>
         </a>
       </div>
     </div>
 
-    <!-- EL DESAFÍO: CAJA DE ORACIÓN Y GUÍA DE SERVICIO -->
+    <!-- EL DESAFÍO Y COMPROMISO DE FE -->
     <section class="challenge">
       <span class="label label-blue">🔥 Desafío y Compromiso</span>
       <h2>¡Toma la antorcha en Contamana!</h2>
       <p>
-        El memorial nos llama a la acción a los creyentes de hoy. Aquí tienes alcances bíblicos de cómo puedes servir a Dios en la congregación:
+        El memorial nos llama a la acción a los creyentes de hoy. Aquí tienes alcances bíblicos de cómo puedes servir a Dios en este tiempo:
       </p>
 
-      <!-- Guía de cómo servir a Dios -->
       <div class="guia-servicio">
         <h4>🌱 ¿Cómo puedes servir al Señor hoy?</h4>
         <ul class="lista-alcances">
-          <li><span>1. Guerrero de Oración:</span> Interceder por los enfermos, familias y las orillas del río.</li>
-          <li><span>2. Sembrador de la Palabra:</span> Compartir el evangelio con vecinos, amigos y caseríos.</li>
-          <li><span>3. Amigo de los Niños:</span> Apoyar en la enseñanza y discipulado de la niñez y juventud.</li>
-          <li><span>4. Manos Solidarias:</span> Visitar hogares y brindar consuelo práctico a los necesitados.</li>
+          <li><span>1. Guerrero de Oración:</span> Interceder por los enfermos, familias y la niñez del lugar.</li>
+          <li><span>2. Sembrador de la Palabra:</span> Compartir el evangelio con vecinos, amigos y los barrios.</li>
+          <li><span>3. Amigo de los Niños:</span> Animate a enseñanzar y discipular a la niñez y la adolescencia.</li>
+          <li><span>4. Manos Solidarias:</span> Visitemos hogares y brindemos consuelo práctico a los necesitados.</li>
         </ul>
       </div>
 
-      <!-- VERSÍCULO QUE CAMBIA SOLO CADA DÍA -->
+      <!-- VERSÍCULO DINÁMICO QUE CAMBIA CADA DÍA -->
       <div class="caja-versiculo-diario">
         <div class="texto-versiculo" id="versiculo-texto">
           Cargando palabra de hoy...
@@ -304,21 +363,26 @@
         <span class="cita-versiculo" id="versiculo-cita"></span>
       </div>
 
-      <!-- Caja para intercambiar motivos de oración -->
-      <div class="caja-oracion">
+      <!-- BOTÓN PRINCIPAL AZUL QUE DESPLIEGA LA CAJA DE ORACIÓN -->
+      <button class="btn-toggle-oracion" onclick="toggleCajaOracion()">
+        🙏 Mi Pedido de Oración ▾
+      </button>
+
+      <!-- CAJA INTERNA QUE APARECE AL TOCAR EL BOTÓN AZUL -->
+      <div id="caja-oracion" class="caja-oracion-desplegable">
         <label for="texto-peticion" style="font-size:0.82rem;font-weight:bold;color:#0f172a;">
-          ✍️ Escribe tu motivo de oración o compromiso de servicio:
+          ✍️ Escribe tu motivo de oración o tu compromiso con Dios:
         </label>
-        <textarea id="texto-peticion" class="textarea-oracion" placeholder="Ejemplo: 'Hermano/Pastor, deseo comprometerme a orar y apoyar en el ministerio de...'"></textarea>
+        <textarea id="texto-peticion" class="textarea-oracion" placeholder="Ejemplo: 'Hermano/Pastor, deseo pedir oración por mi familia y apoyar en...'"></textarea>
         
         <button class="btn-enviar-oracion" onclick="enviarOracionWhatsApp()">
-          📲 Compartir mi motivo en WhatsApp
+          📲 Intercede por mi pedido
         </button>
       </div>
 
     </section>
 
-    <!-- RETORNO A WHATSAPP GENERAL -->
+    <!-- ÚNICO BOTÓN PRINCIPAL DE WHATSAPP -->
     <div class="cta-area">
       <a href="https://chat.whatsapp.com/Ko5CM5yUEhb7K5Dnu95Q60?s=cl&p=a&mlu=4&ilr=4&iam=2" target="_blank" class="btn-whatsapp">
         <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.126.553 4.12 1.52 5.855L.058 23.487a.5.5 0 00.611.611l5.632-1.462A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.94 0-3.79-.562-5.373-1.572l-.386-.23-3.342.868.884-3.26-.253-.4A9.96 9.96 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
@@ -332,7 +396,52 @@
   </div>
 
   <script>
-    // 1. Carrusel táctil con rotación automática
+    // 1. Control del Audio Oculto de GitHub
+    const audioFondo = document.getElementById('audio-fondo');
+
+    // Comienza al primer toque en la pantalla
+    document.body.addEventListener('click', function iniciarAudioFondo() {
+      if (audioFondo && audioFondo.paused) {
+        audioFondo.play().catch(() => {});
+      }
+    }, { once: true });
+
+    // Apaga el audio al abrir videos o audios externos
+    function apagarAudioFondo() {
+      if (audioFondo) {
+        audioFondo.pause();
+      }
+    }
+
+    // 2. Desplegar / Ocultar Caja de Audios Internos
+    function toggleCajaAudios() {
+      const caja = document.getElementById('caja-audios');
+      caja.style.display = (caja.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // 3. Desplegar / Ocultar Caja de Oración
+    function toggleCajaOracion() {
+      const caja = document.getElementById('caja-oracion');
+      caja.style.display = (caja.style.display === 'block') ? 'none' : 'block';
+    }
+
+    // 4. Enviar Motivo de Oración a WhatsApp
+    function enviarOracionWhatsApp() {
+      const texto = document.getElementById('texto-peticion').value.trim();
+      if (!texto) {
+        alert("Por favor escribe tu motivo de oración o compromiso antes de enviar.");
+        return;
+      }
+      
+      const mensaje = encodeURIComponent("🕊️ *Memorial de Contamana - Motivo de Oración / Compromiso:* \n\n" + texto);
+      
+      // Número del líder o pastor (código 51 + 9 dígitos):
+      const enlace = "https://wa.me/51958353881text=" + mensaje;
+      
+      window.open(enlace, '_blank');
+    }
+
+    // 5. Carrusel Táctil
     (function(){
       const track = document.getElementById('track');
       const slides = track.children;
@@ -377,7 +486,7 @@
       startTimer();
     })();
 
-    // 2. Sistema de Versículo Diario Automático (31 días del mes)
+    // 6. Versículo Diario Automático (31 días)
     (function(){
       const versiculosMes = [
         { v: "«Mira que te mando que te esfuerces y seas valiente; no temas ni desmayes, porque Jehová tu Dios estará contigo dondequiera que vayas.»", c: "Josué 1:9" },
@@ -413,29 +522,12 @@
         { v: "«Ciertamente el bien y la misericordia me seguirán todos los días de mi vida.»", c: "Salmos 23:6" }
       ];
 
-      // Selecciona el versículo exacto según el día del mes (1 al 31)
       const diaHoy = new Date().getDate() - 1;
       const versiculo = versiculosMes[diaHoy % versiculosMes.length];
 
       document.getElementById('versiculo-texto').innerText = versiculo.v;
       document.getElementById('versiculo-cita').innerText = versiculo.c;
     })();
-
-    // 3. Envío del motivo de oración o compromiso a WhatsApp
-    function enviarOracionWhatsApp() {
-      const texto = document.getElementById('texto-peticion').value.trim();
-      if (!texto) {
-        alert("Por favor escribe tu motivo de oración o compromiso antes de enviar.");
-        return;
-      }
-      
-      const mensaje = encodeURIComponent("🕊️ *Memorial de Contamana - Motivo de Oración / Compromiso:* \n\n" + texto);
-      
-      // Puedes cambiar este número por el del pastor o líder encargado:
-      const enlace = "https://wa.me/51999999999?text=" + mensaje;
-      
-      window.open(enlace, '_blank');
-    }
   </script>
 
 </body>
